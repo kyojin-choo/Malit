@@ -3,24 +3,23 @@
 
 <head>
 <title>Malit</title>
-<description>Hammering down on malicious activity on Reddit.</description>
 
 <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600&display=swap" rel="stylesheet">
 
 <style type="text/css">
 
 body{
-  font-family:verdana;
+  font-family: 'Quicksand', sans-serif;
   font-size:12pt;
   line-height:115%;
   color:#000;
 }
 
 h1{
-  font-family: 'Quicksand', sans-serif;
   font-weight:600;
-  font-size: 20pt;
-  margin:2px 0;
+  font-size:14pt;
+  margin:10px 0;
+  text-align:center;
   color:#000; /* might change later! */
 }
 
@@ -29,15 +28,87 @@ a{
   color:inherit;
 }
 
-#container{
-
+.icon{
+  /* figure out positioning and dimensions */
+  display:block;
+  width:128px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-#icon{
-  /* figure out positioning and dimensions */
+#title{
+  font-weight:600;
+  font-size:30pt;
+  text-align:center;
+  margin:10px;
+}
+
+#bar{
+  display:block;
+  width:80%;
+  height:20px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.bar_green{
+  display:inline-block;
+  width:33.3%;
+  height:20px;
+  margin-right:-6px;
+  border-top-left-radius:50px;
+  border-bottom-left-radius:50px;
+  background:#34A853;
+}
+
+.bar_yellow{
+  display:inline-block;
+  width:33.3%;
+  height:20px;
+  margin-right:-6px;
+  background:#FBBC05;
+}
+
+.bar_red{
+  display:inline-block;
+  width:33.3%;
+  height:20px;
+  border-top-right-radius:50px;
+  border-bottom-right-radius:50px;
+  background:#EA4335;
+}
+
+#marker{
+  width:0;
+  height:0;
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  border-top:30px solid black;
+  margin-left:75%;
+}
+
+#status{
+  display:block;
+  font-size:16pt;
+  color:#a1a1a1;
+  font-weight:400;
+  margin:10px 0;
+  text-align:center;
+}
+
+#data{
+
 }
 
 </style></head>
-<html>
-<img id="icon" src="icon.png" />
-</html>
+<html><body>
+<img class="icon" src="icon.png" />
+<div id="title">Malit</div>
+<div id=marker></div>
+<div id="bar">
+  <div class="bar_green"></div>
+  <div class="bar_yellow"></div>
+  <div class="bar_red"></div>
+</div>
+<div id="status">This page's malicious activity is: <span style="font-weight:600;color:#EA4335">high</span></div>
+</body></html>
