@@ -1,8 +1,7 @@
 console.log('Injecting content script(s)');
 
-
 document.addEventListener('DOMContentLoaded', function() {
-    var dataButton = document.getElementById('clickme');  
+    var dataButton = document.getElementById('clickme');
     chrome.tabs.executeScript({
         code: 'document.body.innerHTML;'
     },receiveText);
