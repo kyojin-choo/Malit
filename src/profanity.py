@@ -4,19 +4,19 @@
 ##  Date:   09/28/19
 
 
-def badwords():
+#def badwords():
 
-	"""
-  Scaling of curse words
- *-----------------------*
-  Racial profanity: 1
-  Sexist profanity: 0.6
-  Gray territory: 0.4
-  Normal curse words: 0.1
-	"""
+#	"""
+#  Scaling of curse words
+# *-----------------------*
+#  Racial profanity: 1
+#  Sexist profanity: 0.6
+#  Gray territory: 0.4
+#  Normal curse words: 0.1
+#	"""
 	# Here we go..
 
-	profane = { 
+profane = { 
 		"ass" : 0.1, 
 		"asshat" : 0.1,
 		"asshole" : 0.1,
@@ -75,6 +75,4 @@ def badwords():
 		"shit" : 0.1,
 		"slut" : 0.6,
 		"whore" : 0.6,
-	}
-
-main()
+}
