@@ -4,7 +4,7 @@ import configparser
 from collections import Counter
 import malUser
 import malComment
-import profanity as pf
+from profanity import badwords as pf
 import sys
 import time
 
@@ -20,7 +20,6 @@ def cleanText (Text):
 def main():
     file = open("sampleData.txt", "r")
     lines = file.read().split("\" \"")
-    alpha = main(lines)
     usernames = list(dict.fromkeys(lines))
     config = configparser.ConfigParser()
     config.read("praw.ini")
@@ -31,19 +30,20 @@ def main():
                          client_secret = config["DEFAULT"]["secret"], 
                          user_agent = config["DEFAULT"]["agent"])
     userInfo = []
-    
+    keys = pf()
+
     for name in usernames:
-        try:
-            user = reddit.redditor(name)
-            prawcomments, count, wordCount, age = findUserMaliciousComments(user, list(pf.profane.keys()))
-            comments = [];
-            for c in prawcomments:
-                a = malComment.malComment(c.body, c.score, c.ups, c.downs)
-                comments.append(a)
-            userInfo.append(malUser.malUser(name, user.comment_karma, 
-                                    comments, time.time() - age, count, wordCount))
-        except:
-            print("possible 404 on name :" + name)
+#        try:
+	    user = reddit.redditor(name)
+	    prawcomments, count, wordCount, age = findUserMaliciousComments(user, list(keys))
+	    comments = [];
+	    for c in prawcomments:
+		    a = malComment.malComment(c.body, c.score, c.ups, c.downs)
+		    comments.append(a)
+		    userInfo.append(malUser.malUser(name, user.comment_karma, 
+		                                    comments, time.time() - age, count, wordCount))
+ #       except:
+  #          print("possible 404 on name :" + name)
     return userInfo
 
 

@@ -5,11 +5,10 @@
 
 import re
 import sys
-import spacy
 from profanity import badwords as bad
-#from importRedditUser import main
+import importRedditUser as iru
 
-def score(sentences):
+def score():
 	""" score(): assigns a score to a certain individual.
                The algorithm (subject to change.): 
 	                   
@@ -19,45 +18,50 @@ def score(sentences):
 	    returns: score (float: user's suspiciousness score 0.0-1.0)
 	"""
 	
-	# Initializing variables.
-	score = 0.0
-	comm_count = 0
-	profane_count = 0
-	naughty = {}
+
+	user_list = iru.main()
 
 	# Importing in the profanity.py
 	profanity = bad()
 
 	# Loop to create naughty dict
-	for sentence in sentences:
-		comm_count +=1
-		for word in sentence.split():
-			word = re.sub(r'[^\w\s]','',word)             			# Regex substituting in "" for punctuation
-			word_count+=1
+	for users in user_list:
 
-			# Local profanity dict creation
-			if word in profanity and word not in naughty:
-				naughty[word] = 0                                 # Add profanity to dict.
-				profane_count+=1
-
-			if word in naughty:
-				naughty[word] += 1                                # Increment counter
-				profane_count+=1
-
-	check = (comm_count/(age/)
-
-				
-	# Algorithm
-	for i in naughty:
-		score+=(naughty[i] * profanity[i])
-		print(score)
-
+		# Initializing variables/Reset when you iter..
+		naughty = {}
+		comm_count = 0
+		profane_count = 0
+		score = 0.0
 		
+		# Iterate through the comments in the object.
+		for sentence in users.comments:
+			comm_count +=1
+			for word in sentence.split():
+				word = re.sub(r'[^\w\s]','',word)            # Regex substituting in "" for punctuation
+				word_count+=1
+				print(word)
+				# Local profanity dict creation
+				if word in profanity and word not in naughty:
+					naughty[word] = 0                           # Add profanity to dict.
+					profane_count+=1
 
-	if score > 1.0:
-		score = 1.0
+				if word in naughty:
+					naughty[word] += 1                          # Increment counter
+					profane_count+=1
+			
+			print(user, "\n" , naughty)
+					
+		# Algorithm
+#		for i in naughty:
+#			score+=(naughty[i] * profanity[i])
+#			print(score)
+
+#		if score > 1.0:
+#			score = 1.0
  
-	return 
+#		print(user_list[x])
+
+	return 0
 
 def menu():
 	""" menu(): debugging purposes.
@@ -87,7 +91,7 @@ def main():
 		x = menu()
 	
 		if x == 1:
-			__test__()
+			score()
 			
 		elif x == 2:
 			sys.exit(0)
