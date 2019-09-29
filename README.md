@@ -1,20 +1,31 @@
+![Malit icon](/Malitv2/icon.png)
 # Malit
-=======
-<p align="center"> 
-	 <img src="https://raw.githubusercontent.com/kyoogoo/Malit/master/icon.png">
-</p>
+**Developers**: Daniel Choo, Tristan Gantz, Kenny McDonnell, Adrianne Santinor<br/>
+**Artist**: Arizza Santos
 
+## Inspiration
+<p>Due to increasing trolls and propagandist accounts emerging on Reddit, it is difficult to discern who is "being serious" and who is stirring up controversy to garner attention. Thus, some Reddit threads have been polarizing to the point where Redditors will avoid certain subreddits as there is an influx of trolls, extremists, and/or propagandists. This extension will attempt to expose Reddit trolls and malicious accounts so that Redditors can avoid being deceived.</p>
 
-<p align="center"><font size="9"><b> Malit </b></font></p>
-<<<<<<< Updated upstream
-<p align="center"><b> (Malicious Reddit (Tool)) </b></p> 
-<p align="center"> <u>Authors</u>: Tristan Gantz, Daniel Choo, Adrianne Santinor, Kenny McDonnell </p>
-<p align="center"> <u>Artist</u>: Arizza Santos </p>
-=======
-<p align="center"><b> Malicious Reddit (Tool) </b></p> 
-<p align="center"> Authors: Tristan Gantz, Daniel Choo, Adrianne Santinor, Kenny McDonnell </p>
->>>>>>> Stashed changes
-<hr>
+## What it does
+<p>Once you click on the extension, it will list the all of the users in the thread in the window frame and display their "suspicious score." </p>
 
-This Chrome Extension will be able to detect malicious/troll users on a particular Reddit thread.
+## How we built it
+- HTML/CSS (frontend)
+- Javascript/Python
+- Custom algorithm to calculate scores and assign them to users in a thread.
 
+## Challenges we ran into
+- Establishing a pipeline from the Chrome to Python (still in progress)
+
+## Accomplishments that we're proud of 
+- Learning how to use Chrome Extension API
+- Fetching usernames from a block of HTML by identifying patterns and implementing regular expressions
+
+## What we learned
+- How to create a Chrome extension
+- More about regular expressions
+
+## What's next for Malit
+- Block malicious comments from appearing on the page
+- Assign the score on the page
+- More additions to the popup window on the front end
