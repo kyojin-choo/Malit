@@ -1,6 +1,6 @@
 ![Malit icon](/Malitv2/icon.png)
 # Malit
-**Developers**: Daniel Choo, Tristan Gantz, Kenny McDonnell, Adrianne Santinor
+**Developers**: Daniel Choo, Tristan Gantz, Kenny McDonnell, Adrianne Santinor<br/>
 **Artist**: Arizza Santos
 
 ## Inspiration
