@@ -1,0 +1,106 @@
+/* CSS file for Malit */
+
+body{
+  font-family: 'Quicksand', sans-serif;
+  font-size:12pt;
+  line-height:115%;
+  color:#000;
+}
+
+h1{
+  font-weight:600;
+  font-size:14pt;
+  margin:10px 0;
+  padding:3px 0;
+  text-align:center;
+  color:#000; /* might change later! */
+  border-bottom:1px solid #000;
+}
+
+a{
+  text-decoration:none;
+  color:#a1a1a1;
+}
+
+.icon{
+  display:block;
+  width:128px;
+  margin:20px auto 20px auto;
+}
+
+#title{
+  font-weight:600;
+  font-size:30pt;
+  text-align:center;
+}
+
+#bar{
+  display:block;
+  width:80%;
+  height:20px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.bar_green{
+  display:inline-block;
+  width:33.3%;
+  height:20px;
+  margin-right:-6px!important;
+  border-radius:50px 0 0 50px;
+  background:#34A853;
+}
+
+.bar_yellow{
+  display:inline-block;
+  width:33.3%;
+  height:20px;
+  margin-right:-6px!important;
+  background:#FBBC05;
+}
+
+.bar_red{
+  display:inline-block;
+  width:33.3%;
+  height:20px;
+  border-radius:0 50px 50px 0;
+  background:#EA4335;
+}
+
+#marker{
+  width:0;
+  height:0;
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
+  border-top:30px solid black;
+  margin:20px 0 0 75%;
+}
+
+#status{
+  display:block;
+  font-size:16pt;
+  color:#a1a1a1;
+  font-weight:400;
+  margin:10px 0;
+  text-align:center;
+}
+
+#data{
+  width:95%;
+  table-layout:fixed;
+  border-collapse:collapse;
+  padding:15px;
+  margin:10px 0;
+  text-align:left;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#data h1{text-align:left;}
+#data p{margin:0 10px;}
+#data td{
+  text-align:left;
+  width:75%;
+  padding:10px;
+}
+#data td+td{text-align:right;width:25%;}
