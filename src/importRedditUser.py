@@ -17,8 +17,11 @@ def cleanText (Text):
     return Text.split()
 
 #take a list of names and return a list of objects
-def main(usernames):
-    usernames = list(dict.fromkeys(usernames))
+def main():
+    file = open("sampleData.txt", "r")
+    lines = file.read().split("\" \"")
+    alpha = main(lines)
+    usernames = list(dict.fromkeys(lines))
     config = configparser.ConfigParser()
     config.read("praw.ini")
         
@@ -91,10 +94,3 @@ def findUserKeywordUsage(user):
 #print("comment karma: " + user.comment_karma)
 #print(user._path)
     
-#takes in a list of usernames
-if len(sys.argv) == 2:
-    file = open(sys.argv[1], "r")
-    lines = file.read().split("\" \"")
-    alpha = main(lines)
-else:
-    print("NoNoNo")
