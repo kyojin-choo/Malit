@@ -1,3 +1,5 @@
+![Malit Logo](https://raw.githubusercontent.com/kyoogoo/Malit/master/icon.png)
+
 # Malit (Malicious Reddit (Tool))
 
 This Chrome Extension will be able to detect malicious/troll users on a particular Reddit thread.
