@@ -70,8 +70,8 @@ a{
 #marker{
   width:0;
   height:0;
-  border-left:10px solid transparent;
-  border-right:10px solid transparent;
+  border-left:8px solid transparent;
+  border-right:8px solid transparent;
   border-top:30px solid black;
   margin:20px 0 0 75%;
 }
@@ -86,12 +86,21 @@ a{
 }
 
 #data{
-  display:block;
+  width:95%;
+  table-layout:fixed;
+  border-collapse:collapse;
   padding:15px;
   margin:10px 0;
   text-align:left;
-  line-height:200%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 #data h1{text-align:left;}
 #data p{margin:0 10px;}
+#data td{
+  text-align:left;
+  width:75%;
+  padding:10px;
+}
+#data td+td{text-align:right;width:25%;}
