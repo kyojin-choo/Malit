@@ -5,7 +5,7 @@ body{
   max-width: 100%;
   position: relative;
   vertical-align:middle;
-  
+
   font-family: 'Quicksand', sans-serif;
   font-size:12pt;
   line-height:115%;
@@ -78,7 +78,7 @@ a{
   border-left:8px solid transparent;
   border-right:8px solid transparent;
   border-top:30px solid black;
-  margin:20px 0 0 75%;
+  margin:20px 0 0 15%;
 }
 
 #status{
@@ -108,4 +108,4 @@ a{
   width:75%;
   padding:10px;
 }
-#data td+td{text-align:right;width:25%;}
+#data td+td{text-align:left;width:25%;}

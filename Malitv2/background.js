@@ -1,25 +1,21 @@
-console.log('here');
 // background.js
 // Scripts to fetch usernames from the comment page
 //console.log('here');
 
-var users = []
-
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-      console.log("background.js got a message")
-      var data = request;
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+      var data = new Array(request);
       //console.log(request);
       sendResponse();
       console.log(data);
+      
 
       // creating list of users from pulled data
-      for(let name of data){
-        users.push(name);
-      }
+      //for(let name of data){
+      //  users.push(name);
+     // }
   }
 );
-
+/*
 document.getElementById("")
 
 function createTable(){
@@ -33,3 +29,4 @@ function createTable(){
   }
   body.appendChild(tbl);
 }
+*/
