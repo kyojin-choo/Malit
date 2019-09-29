@@ -1,3 +1,5 @@
+# Malit
+=======
 <p align="center"> 
 <img src="https://raw.githubusercontent.com/kyoogoo/Malit/master/icon.png">
 </p>
@@ -10,5 +12,4 @@
 <hr>
 
 This Chrome Extension will be able to detect malicious/troll users on a particular Reddit thread.
-
 
