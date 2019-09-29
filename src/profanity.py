@@ -43,7 +43,7 @@ def badwords():
 		"fucked" : 0.1,
 		"fucking" : 0.1,
 		"gigolo" : 0.3,
-		"goddamnit" : 0.1,
+ 		"goddamnit" : 0.1,
 		"godamnit" : 0.1,
 		"gook" : 1.0,
 		"gyp" : 1.0,
@@ -60,6 +60,7 @@ def badwords():
 		"kyke" : 1.0,
 		"kykes" : 1.0,
 		"kkk" : 0.4,
+		"kys" : 0.4,
 		"lynch" : 0.4,
 		"nazi" : 0.4,
 		"negro" : 1.0,
@@ -77,4 +78,6 @@ def badwords():
 		"whore" : 0.6,
 	}
 
-main()
+	return profane
+
+badwords()
