@@ -4,7 +4,9 @@ import configparser
 from collections import Counter
 import malUser
 import malComment
+import profanity as pf
 import sys
+import time
 
 def cleanText (Text):
     # Cleaning text and lower casing all words
@@ -14,11 +16,10 @@ def cleanText (Text):
     # split returns a list of words delimited by sequences of whitespace (including tabs, newlines, etc, like re's \s) 
     return Text.split()
 
-#take a list of names and return a dictonary
-def main(userFile):
+#take a list of names and return a list of objects
+def main(usernames):
     config = configparser.ConfigParser()
     config.read("praw.ini")
-    text_file = open(usernames, "r")
         
     #create a read only reddit instance
     #to authorize the reddit instance, add username and password to praw
@@ -26,28 +27,30 @@ def main(userFile):
                          client_secret = config["DEFAULT"]["secret"], 
                          user_agent = config["DEFAULT"]["agent"])
     userInfo = []
+    
     for name in usernames:
         try:
             user = reddit.redditor(name)
-            prawcomment, count = findUserMaliciousComments(user, malList)
+            prawcomments, count = findUserMaliciousComments(user, list(pf.profane.keys()))
             comments = [];
             for c in prawcomments:
-                comments.append(malComment(c.body, c.score, c.up, c.down))
-            print(comments[0])
-            userInfo.append(malUser(name, user.comment_karma, 
-                                    malComment, count))
+                a = malComment.malComment(c.body, c.score, c.ups, c.downs)
+                comments.append(a)
+            userInfo.append(malUser.malUser(name, user.comment_karma, 
+                                    comments, time.time() - user.created, count))
         except:
-            console.log("possible 404 on name :" + name)
-    return {name:findUserKeywordUsage(name) for name in usernames}
+            print("possible 404 on name :" + name)
+    return userInfo
 
 
 #given a PRAW redditor returns a list of PRAW comments containing mal words
 def findUserMaliciousComments(user, profanityList):
     malComments = []
     count = 0
-    for submission in user.comments.new(limit=1000):
+    for submission in user.comments.new(limit=50):
         count += 1
-        arr = cleanText(submission).split(" ")
+        #print(cleanText(submission.body))
+        arr = cleanText(submission.body)
         for word in arr:
             for profanity in profanityList:
                 if word == profanity:
@@ -57,11 +60,10 @@ def findUserMaliciousComments(user, profanityList):
 
 #takes a string username and finds that redditor
 #returns a tuple list with the words they used and frequency
-def findUserKeywordUsage(username):
-    user = reddit.redditor(username)
+def findUserKeywordUsage(user):
     userComments = ""
     count = 0
-    for submission in user.comments.new(limit=1000):#new(limit=5):
+    for submission in user.comments.new(limit=1000):
         #print(submission.body)
         count += 1
         userComments += submission.body
@@ -86,6 +88,8 @@ def findUserKeywordUsage(username):
     
 #takes in a list of usernames
 if len(sys.argv) == 2:
-    main(sys.argv[1])
+    file = open(sys.argv[1], "r")
+    lines = file.read().split("\" \"")
+    alpha = main(lines)
 else:
     print("NoNoNo")
