@@ -3,11 +3,13 @@
 </p>
 
 
-<p align="center"><font size="20"><b> Malit </b></font></p>
+<p align="center"><font size="5"><b> Malit </b></font></p>
+<p align="center"><b> (Malicious Reddit (Tool))</b></p> 
+<p align="center"> Authors: Tristan Gantz, Daniel Choo, Adrianne Santinor, Kenny McDonnell </p>
 <hr>
 
-<p align="center"> (Malicious Reddit (Tool)) </p> 
+
 	 
 This Chrome Extension will be able to detect malicious/troll users on a particular Reddit thread.
 
-<p align="center"> Authors: Tristan Gantz, Daniel Choo, Adrianne Santinor, Kenny McDonnell </p>
+
