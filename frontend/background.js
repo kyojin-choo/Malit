@@ -1,4 +1,5 @@
-
+// background.js
+// Scripts to fetch usernames from the comment page
 chrome.browserAction.onClicked.addListener(function(tab) {
   console.log('Injecting content script(s)');
   
@@ -11,9 +12,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 function receiveText(resultsArray){
   var x = document.createElement("div")
   x.innerHTML = resultsArray[0];
-  
-  console.log("TESTTTTTTTTTTTTTTTTTTT");
-
   var usernames = x.innerHTML.match(/(?<=data-author=").{3,20}(?=".*?data-replies)/g);
   console.log(usernames);
 }
