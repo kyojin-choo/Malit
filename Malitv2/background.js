@@ -7,14 +7,15 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       //console.log(request);
       sendResponse();
       console.log(data);
+      
 
       // creating list of users from pulled data
-      for(let name of data){
-        users.push(name);
-      }
+      //for(let name of data){
+      //  users.push(name);
+     // }
   }
 );
-
+/*
 document.getElementById("")
 
 function createTable(){
@@ -28,3 +29,4 @@ function createTable(){
   }
   body.appendChild(tbl);
 }
+*/
