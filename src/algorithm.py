@@ -29,14 +29,14 @@ def score():
 
 		# Initializing variables/Reset when you iter..
 		naughty = {}
-		comm_count = 0
 		profane_count = 0
+		word_count = 0
+		avg_bad = 0
 		score = 0.0
 		
 		# Iterate through the comments in the object.
 		for sentence in users.comments:
-			comm_count +=1
-			for word in sentence.split():
+			for word in sentence.commentText():
 				word = re.sub(r'[^\w\s]','',word)            # Regex substituting in "" for punctuation
 				word_count+=1
 				print(word)
@@ -51,10 +51,21 @@ def score():
 			
 			print(user, "\n" , naughty)
 					
-		# Algorithm
-#		for i in naughty:
-#			score+=(naughty[i] * profanity[i])
-#			print(score)
+
+			# Algorithm
+			timeCheck = (user.numComments / (user.age/3600*24)) 
+
+			if timeCheck >= 0.8:
+				for i in naughty:				
+					avg_bad+=(naughty[i] * profanity[i])
+					
+				avg_bad /= len(dict)
+				score = (profanity_count*avg_bad)/(word_count*0.1)
+
+			else:
+				pass
+
+			print(users.name, " has a suspicious score of ", score)
 
 #		if score > 1.0:
 #			score = 1.0
