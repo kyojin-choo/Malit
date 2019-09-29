@@ -1,24 +1,20 @@
 {
     "description": "Gets the text of a webpage and logs it to the console",
     "manifest_version": 2,
-    "name": "Get Webpage Text",
-    "version": "0.1",
-
-    "permissions": [
-        "activeTab", "tabs"
-    ],
-
+    "name": "Malit",
+    "version": "0.2",
+    "permissions": ["activeTab", "tabs"],
     "background": {
-        "scripts": [
-            "background.js"
-        ]
+        "scripts": ["background.js"],
+        "persistent": true
     },
 
     "browser_action": {
+        "default_popup": "popup.html",
         "default_icon": {
             "32": "images/get_started32.png"
         },
-        "default_title": "Get Webpage Text",
+        "default_title": "Malit the trolls!",
         "browser_style": true
     }
 }

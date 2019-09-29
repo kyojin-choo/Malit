@@ -1,6 +1,11 @@
 /* CSS file for Malit */
 
 body{
+  min-width: 500px; /* your desired width */
+  max-width: 100%;
+  position: relative;
+  vertical-align:middle;
+  
   font-family: 'Quicksand', sans-serif;
   font-size:12pt;
   line-height:115%;
