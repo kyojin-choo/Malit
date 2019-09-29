@@ -34,14 +34,14 @@ def main():
 
     for name in usernames:
 #        try:
-	    user = reddit.redditor(name)
-	    prawcomments, count, wordCount, age = findUserMaliciousComments(user, list(keys))
-	    comments = [];
-	    for c in prawcomments:
-		    a = malComment.malComment(c.body, c.score, c.ups, c.downs)
-		    comments.append(a)
-		    userInfo.append(malUser.malUser(name, user.comment_karma, 
-		                                    comments, time.time() - age, count, wordCount))
+        user = reddit.redditor(name)
+        prawcomments, count, wordCount, age = findUserMaliciousComments(user, list(keys))
+        comments = [];
+        for c in prawcomments:
+            a = malComment.malComment(c.body, c.score, c.ups, c.downs)
+            comments.append(a)
+        userInfo.append(malUser.malUser(name, user.comment_karma, 
+                                        comments, time.time() - age, count, wordCount))
  #       except:
   #          print("possible 404 on name :" + name)
     return userInfo

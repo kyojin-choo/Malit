@@ -5,6 +5,6 @@ class malComment:
         self.downvotes = downvote
         self.karma = karma
     def __repr__(self):
-        return self.commentText + str(self.upvotes) + str(self.downvotes) + str(self.karma)
+        return ""#self.commentText + str(self.upvotes) + str(self.downvotes) + str(self.karma)
     def __str__(self):
-        return self.commentText + str(self.upvotes) + str(self.downvotes) + str(self.karma)
+        return ""#self.commentText + str(self.upvotes) + str(self.downvotes) + str(self.karma)
