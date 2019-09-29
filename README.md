@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/kyoogoo/Malit/master/icon.png">
+![Malit icon](/Malitv2/icon.png)
 # Malit
 **Developers**: Daniel Choo, Tristan Gantz, Kenny McDonnell, Adrianne Santinor
 **Artist**: Arizza Santos
